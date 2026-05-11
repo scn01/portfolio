@@ -1,0 +1,72 @@
+:root {
+  --red: #e03030;
+  --red-dark: #a01818;
+  --red-glow: rgba(224, 48, 48, 0.18);
+  --amber: #f5a623;
+  --amber-dim: #c47c0a;
+  --amber-glow: rgba(245, 166, 35, 0.15);
+  --black: #080808;
+  --dark: #0f0f0f;
+  --panel: #141414;
+  --panel2: #1a1a1a;
+  --border: #2a2a2a;
+  --border-red: rgba(224, 48, 48, 0.35);
+  --text: #e8e8e8;
+  --muted: #888;
+  --green: #39ff6a;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-display: 'Orbitron', monospace;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* SCANLINE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.07) 2px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* FADE IN ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}

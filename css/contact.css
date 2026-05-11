@@ -1,0 +1,242 @@
+/* CONTACT SECTION */
+#contact {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 80px 3rem 120px;
+  max-width: 100%;
+}
+
+.contact-inner {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.contact-heading span { color: var(--red); }
+
+.contact-sub {
+  font-size: 17px;
+  color: #777;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.contact-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.contact-link:hover {
+  color: var(--red);
+  border-color: var(--red);
+  background: var(--red-glow);
+}
+
+.contact-email {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--amber);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: color 0.2s;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.contact-email:hover { color: var(--red); }
+
+/* CONTACT FORM */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.form-full { grid-column: span 2; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--red);
+}
+
+.form-error {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 1px;
+  min-height: 14px;
+}
+
+.form-success {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 1rem;
+  display: none;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: var(--panel);
+  border: 1px solid var(--border-red);
+  max-width: 560px;
+  width: calc(100% - 2rem);
+  padding: 2rem;
+  position: relative;
+  transform: translateY(16px);
+  transition: transform 0.2s;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.open .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.modal h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  color: var(--text);
+}
+
+.modal p {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.modal .modal-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--amber);
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--border);
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .contact-form { grid-template-columns: 1fr; }
+  .form-full { grid-column: span 1; }
+}
