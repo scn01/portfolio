@@ -232,7 +232,7 @@ footer {
   border-top: 1px solid var(--border);
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--border);
+  color: var(--muted);
   letter-spacing: 2px;
 }
 
