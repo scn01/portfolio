@@ -16,15 +16,16 @@ const modalData = {
   mnmx: {
     title: 'MNMX MEMORY BATTLE',
     meta: 'GAME DEV // PROBABILISTIC AI // BROWSER GAME',
-    desc: 'A memory card matching game featuring a probabilistic AI opponent that actually remembers cards it has seen — making it a genuine challenge at higher difficulties.',
+    desc: 'A competitive memory battle game where you face MNMX - an adaptive AI opponent with simulated memory, probabilistic decision-making, and evolving strategy patterns. As difficulties increase, the AI becomes faster, smarter, and more efficient at remembering previously revealed cards, transforming a classic memory game into a tense tactical duel.',
     details: [
-      'The AI opponent uses a weighted probability model, prioritising cards it has already seen to simulate real memory.',
-      'Progressive difficulty: each level adds more cards and increases the AI\'s memory retention percentage.',
-      'Refactored into a clean multi-file architecture (separate HTML, CSS, JS files) for maintainability.',
-      'Score tracking with local high score persistence via localStorage.',
-      'Smooth card flip animations using CSS 3D transforms.'
+      'Adaptive AI system featuring memory retention, accuracy scaling, and strategic card selection behaviors.',
+      'Four difficulty levels ranging from casual play to a near-perfect memory AI with aggressive optimization.',
+      'Multiple card themes including emoji, symbols, letters, and number modes.',
+      'Built-in hint system, combo streak tracking, animated scoreboards, and live turn indicators.',
+      'Procedural sound effects generated entirely with the Web Audio API - no external assets used.',
+      'Persistent battle history with win/loss tracking, best streaks, and local statistics via localStorage.'
     ],
-    tech: ['JavaScript', 'CSS3', 'HTML5', 'Probability', 'AI Agent', 'Local Storage'],
+    tech: ['JavaScript', 'CSS3', 'HTML5', 'Probability', 'AI Agent', 'Local Storage','Web Audio API','Game AI'],
     status: 'COMPLETE'
   },
   portfolio: {
