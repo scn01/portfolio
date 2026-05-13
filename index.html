@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/experience.css">
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/snake.css">
 </head>
 <body>
 
@@ -32,6 +33,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Education</a></li>
+    <li><a href="#minigame">Minigame</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <span class="nav-status">OPEN TO OPPORTUNITIES</span>
@@ -395,7 +397,10 @@
         <span class="tech-tag">Local Storage</span>
       </div>
       <div class="project-footer">
-        <button class="project-link" onclick="openModal('snake')">READ MORE</button>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <button class="project-link" onclick="openModal('snake')">READ MORE</button>
+          <a href="#minigame" class="project-link">SCROLL TO GAME</a>
+        </div>
         <span class="project-status">COMPLETE</span>
       </div>
     </div>
@@ -501,11 +506,101 @@ It uses the random module to simulate dice rolls and prints fun ASCII art to rep
   </div>
 </section>
 
+<!-- SNAKE MINIGAME -->
+<section id="minigame">
+  <div class="section-header fade-in">
+    <span class="section-num">05</span>
+    <h2 class="section-title">MINIGAME</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="snake-wrapper fade-in">
+    <div class="snake-left">
+      <div class="snake-info-block">
+        <h3>// ABOUT THIS GAME</h3>
+        <div class="snake-stat-row">
+          <span class="snake-stat-key">ENGINE</span>
+          <span class="snake-stat-val">HTML5 Canvas API</span>
+        </div>
+        <div class="snake-stat-row">
+          <span class="snake-stat-key">RENDERER</span>
+          <span class="snake-stat-val">JavaScript</span>
+        </div>
+        <div class="snake-stat-row">
+          <span class="snake-stat-key">STORAGE</span>
+          <span class="snake-stat-val">localStorage</span>
+        </div>
+        <div class="snake-stat-row">
+          <span class="snake-stat-key">GRID</span>
+          <span class="snake-stat-val">20 × 20</span>
+        </div>
+        <div class="snake-stat-row">
+          <span class="snake-stat-key">SPEED SCALING</span>
+          <span class="snake-stat-val">Every 5 points</span>
+        </div>
+      </div>
+
+      <div class="snake-info-block" style="border-left-color: var(--red)">
+        <h3 style="color: var(--red)">// CONTROLS</h3>
+        <div class="snake-controls-list">
+          <span class="snake-key"><kbd>↑</kbd> / <kbd>W</kbd> Up</span>
+          <span class="snake-key"><kbd>↓</kbd> / <kbd>S</kbd> Down</span>
+          <span class="snake-key"><kbd>←</kbd> / <kbd>A</kbd> Left</span>
+          <span class="snake-key"><kbd>→</kbd> / <kbd>D</kbd> Right</span>
+          <span class="snake-key"><kbd>P</kbd> Pause</span>
+          <span class="snake-key">Swipe on mobile</span>
+        </div>
+      </div>
+
+      <div class="snake-info-block">
+        <h3>// TIPS</h3>
+        <p style="font-family:var(--font-mono);font-size:12px;color:#666;line-height:1.7;letter-spacing:1px">
+          → Speed increases every 5 points<br>
+          → Your high score persists across visits<br>
+          → Hitting a wall or yourself ends the run<br>
+          → Collect the amber blocks to grow
+        </p>
+      </div>
+    </div>
+
+    <div class="snake-canvas-wrap">
+      <div class="snake-hud">
+        <span class="hud-score" id="snake-score">SCORE: 000</span>
+        <span class="hud-level" id="snake-level">LVL: 1</span>
+        <span class="hud-best"  id="snake-best">BEST: 000</span>
+      </div>
+
+      <div class="snake-overlay">
+        <canvas id="snake-canvas" width="400" height="400"></canvas>
+
+        <div class="snake-screen" id="snake-start">
+          <div class="snake-screen-title">SNAKE.EXE</div>
+          <div class="snake-screen-sub">RETRO TERMINAL EDITION</div>
+          <div class="snake-screen-sub" style="margin-top:0.5rem">Use arrow keys / WASD to move<br>Swipe on mobile</div>
+          <button class="btn btn-primary" id="snake-start-btn" style="margin-top:0.5rem">START GAME</button>
+        </div>
+
+        <div class="snake-screen" id="snake-over">
+          <div class="snake-screen-title">GAME OVER</div>
+          <div class="snake-screen-score" id="snake-over-score">SCORE: 0</div>
+          <div class="snake-screen-score" id="snake-over-best" style="color:var(--amber)">BEST: 0</div>
+          <button class="btn btn-primary" id="snake-restart-btn" style="margin-top:0.5rem">TRY AGAIN</button>
+        </div>
+      </div>
+
+      <div class="snake-btn-row">
+        <button class="btn btn-secondary" id="snake-pause-btn">PAUSE</button>
+        <a href="#contact" class="btn btn-primary">CONTACT ME →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" style="max-width:100%">
   <div class="contact-inner">
     <div class="section-header fade-in" style="justify-content:center;margin-bottom:1.5rem">
-      <span class="section-num">05</span>
+      <span class="section-num">06</span>
       <h2 class="section-title">CONTACT</h2>
     </div>
 
@@ -568,6 +663,7 @@ It uses the random module to simulate dice rolls and prints fun ASCII art to rep
 <script src="js/modal.js"></script>
 <script src="js/form.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/snake.js"></script>
 
 </body>
 </html>
