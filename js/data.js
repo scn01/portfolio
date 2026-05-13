@@ -16,16 +16,18 @@ const modalData = {
   mnmx: {
     title: 'MNMX MEMORY BATTLE',
     meta: 'GAME DEV // PROBABILISTIC AI // BROWSER GAME',
-    desc: 'A competitive memory battle game where you face MNMX - an adaptive AI opponent with simulated memory, probabilistic decision-making, and evolving strategy patterns. As difficulties increase, the AI becomes faster, smarter, and more efficient at remembering previously revealed cards, transforming a classic memory game into a tense tactical duel.',
+    desc: 'A competitive memory card game where you go head-to-head against MNMX — an AI opponent with a real probabilistic memory system, tunable retention, and three distinct strategy modes. Built entirely in vanilla JavaScript with no frameworks or external assets.',
     details: [
-      'Adaptive AI system featuring memory retention, accuracy scaling, and strategic card selection behaviors.',
-      'Four difficulty levels ranging from casual play to a near-perfect memory AI with aggressive optimization.',
-      'Multiple card themes including emoji, symbols, letters, and number modes.',
-      'Built-in hint system, combo streak tracking, animated scoreboards, and live turn indicators.',
-      'Procedural sound effects generated entirely with the Web Audio API - no external assets used.',
-      'Persistent battle history with win/loss tracking, best streaks, and local statistics via localStorage.'
+      'AI memory system: MNMX tracks every card it sees using a retention probability (40%–100% per difficulty), then scores known pairs by confidence and picks optimally on Hard and Impossible — so it genuinely gets smarter the longer the game goes on.',
+      'Three AI strategy modes — Dumb (random exploration, no memory bias), Normal (mild preference for unseen cards), and Smart (always targets unseen cards first to maximise information gain, picks the earliest-seen pair for highest confidence).',
+      'Four difficulty levels: Easy (4×4, 35% accuracy, 2 hints), Medium (4×5, 60% accuracy, 1 hint), Hard (6×6, 88% accuracy, no hints), and Impossible (8×8, 100% accuracy and retention, no hints).',
+      'Four card themes — Emoji, Numbers, Letters, and Symbols — each with a 32-item pool, shuffled fresh every game. Theme and difficulty changes instantly restart the game.',
+      'Hint system: flashes a valid unmatched pair with a purple glow animation for 900ms using the same pair-finding logic as the AI, so hints are always solvable.',
+      'Combo streak tracking for both player and AI — a toast notification fires at 3+ consecutive matches, with an escalating chiptune fanfare generated entirely via the Web Audio API (no audio files).',
+      'Full sound design using Web Audio API oscillators only: soft sine click for flips, two-tone triangle chime for matches, sawtooth thud for mismatches, ascending fanfare for wins, and a descending tone for losses.',
+      'Persistent battle history in localStorage: win/loss/draw record, win rate percentage, longest win streak, and best score per difficulty — all shown in a scrollable history panel with colour-coded result rows.'
     ],
-    tech: ['JavaScript', 'CSS3', 'HTML5', 'Probability', 'AI Agent', 'Local Storage','Web Audio API','Game AI'],
+    tech: ['JavaScript', 'HTML5', 'CSS3', 'Web Audio API', 'AI Agent', 'Probabilistic Memory', 'LocalStorage', 'ES Modules', 'CSS Grid', 'CSS Animations'],
     status: 'COMPLETE'
   },
   portfolio: {
