@@ -60,6 +60,19 @@ const modalData = {
     tech: ['Java', 'OOP', 'Singleton', 'Factory', 'Builder', 'Inheritance', 'Enum', 'UML', 'PlantUML'],
     status: 'COMPLETE'
   },
+  dice: {
+    title: 'PYTHON DICE ROLLER',
+    meta: 'GAME DEV // PYTHON // CLI APPLICATION',
+    desc: 'An interactive dice-rolling game built in Python. Uses the random module to simulate dice rolls and prints ASCII art to represent each face of the die.',
+    details: [
+      'ASCII art rendering for all six dice faces, displayed directly in the terminal.',
+      'Uses Python\'s random module for fair, randomised dice roll simulation.',
+      'Interactive CLI loop — roll as many times as you like without restarting.',
+      'Clean, readable code with no external dependencies.'
+    ],
+    tech: ['Python', 'ASCII Art', 'Random Module', 'CLI Application'],
+    status: 'COMPLETE'
+  },
   snake: {
     title: 'RETRO SNAKE GAME',
     meta: 'GAME DEV // CANVAS API // PORTFOLIO MINIGAME',
